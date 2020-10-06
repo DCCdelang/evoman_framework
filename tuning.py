@@ -49,15 +49,3 @@ class Tuning:
             if crossover[idx] < minMaxValue[0]:
                 crossover[idx] = minMaxValue[0]
         return crossover
-
-
-population = np.empty([10, 1])
-
-parents = np.array([[0.53], [0.459], [0.181], [0.967], [0.509]])
-print(parents)
-children = np.array([[0.50453], [0.43353], [0.15553], [0.94153], [0.48353]])
-print(children)
-population[0 : parents.shape[0], :] = parents  # fittest parents
-population[parents.shape[0] :, :] = children  # children
-
-print(population)
