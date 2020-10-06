@@ -23,9 +23,9 @@ n_best = 9
 n_weights = 265
 n_hidden_neurons = 10
 mutation_rate = 0.2
-gens = 200
-npop = 40
-gens_first = 15
+gens = 10
+npop = 10
+gens_first = 1
 
 
 def simulation(env, x):
@@ -638,6 +638,7 @@ for i in range(n_bosses):
             env.update_solutions(solutions)
             env.save_state()
 
+        print("something")
         best_fit_inds = heapq.nlargest(9, fit_pop)
         best_index = heapq.nlargest(9, range(npop), key=lambda x: fit_pop[x])
         best_pop_inds = list(map(lambda y: pop[y], best_index))
@@ -682,9 +683,9 @@ file_aux.close()
 
 # tuning --------------------------------------
 numberOfParents = 10
-numberOfParentsMating = 5
+numberOfParentsMating = 3
 numberOfParameters = 1
-numberOfGenerations = gens / numberOfParents
+numberOfGenerations = int(gens / numberOfParents)
 
 tune = Tuning(numberOfParents, numberOfParentsMating)
 populationSize = (numberOfParents, numberOfParameters)
@@ -695,13 +696,13 @@ populationHistory = np.empty(
 )
 populationHistory[0:numberOfParents, :] = population
 
-for i in range(gens / numberOfParents):
+for i in range(int(gens / numberOfParents)):
     best_gen = 0
     temp_fit = []
     for k in range(numberOfParents):
         rate = population[k]
         pop, fit = evolution(pop, fit_pop, positions, rate)  # mutation rate param
-        print(f"Gen {numberOfParents*i + k}")
+        print(f"Gen {numberOfParents*i + k}", f"mutation rate = {rate}")
 
         best_in_gen = np.max(fit)
         best_gen = best_in_gen
@@ -726,11 +727,9 @@ for i in range(gens / numberOfParents):
     fitnessHistory[i, :] = temp_fit
     parents = tune.new_parents_selection(temp_fit, population)
     childrenSize = (populationSize[0] - parents.shape[0], numberOfParameters)
-    children = tune.crossover_uniform(parents, childrenSize)
-    mut_children = tune.mutation(children)
-
     population[0 : parents.shape[0], :] = parents  # fittest parents
-    population[parents.shape[0] :, :] = mut_children  # children
+    children = tune.mutation(parents)
+    population[parents.shape[0] :, :] = children  # children
     populationHistory[
         (i + 1) * numberOfParents : (i + 1) * numberOfParents + numberOfParents, :
     ] = population
@@ -739,7 +738,9 @@ for i in range(gens / numberOfParents):
         break
 
 fitness = fitnessHistory[numberOfGenerations, :]
+print(fitnessHistory)
 bestFitnessIndex = np.where(fitness == np.max(fitness))[0][0]
+print("b", bestFitnessIndex)
 
 best = np.max(fit_pop)
 best_index = np.unravel_index(np.argmax(fit_pop), fit_pop.shape)
