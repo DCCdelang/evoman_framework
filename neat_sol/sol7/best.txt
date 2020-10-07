@@ -1,0 +1,30 @@
+Population's average fitness: 32.00420 stdev: 35.80095
+Best fitness: 92.17065 - size: (5, 94) - species 1 - id 347
+Average adjusted fitness: 0.386
+Mean genetic distance 0.631, standard deviation 0.175
+Population of 20 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   19    20     92.2    0.386     0
+Total extinctions: 0
+Generation time: 52.293 sec (57.389 average)
+
+Best man:
+Key: 347
+Fitness: 92.17065437104557
+Nodes:
+        0 DefaultNodeGene(key=0, bias=0.751160282524175, response=1.0, activation=sigmoid, aggregation=sum)
+        1 DefaultNodeGene(key=1, bias=0.34090950097456035, response=1.0, activation=sigmoid, aggregation=sum)
+        2 DefaultNodeGene(key=2, bias=-1.2129712789599632, response=1.0, activation=sigmoid, aggregation=sum)
+        3 DefaultNodeGene(key=3, bias=-1.4882634092157208, response=1.0, activation=sigmoid, aggregation=sum)
+        4 DefaultNodeGene(key=4, bias=0.18619739692619855, response=1.0, activation=sigmoid, aggregation=sum)
+Connections:
+        DefaultConnectionGene(key=(-20, 0), weight=0.30891837636735076, enabled=True)
+        DefaultConnectionGene(key=(-20, 1), weight=2.5738385041602916, enabled=True)
+        DefaultConnectionGene(key=(-20, 2), weight=-2.3251113811390964, enabled=True)
+        DefaultConnectionGene(key=(-20, 3), weight=1.0560904023228503, enabled=True)
+        DefaultConnectionGene(key=(-20, 4), weight=2.07145486819703, enabled=True)
+        DefaultConnectionGene(key=(-19, 0), weight=-0.037267338251181115, enabled=True)
+        DefaultConnectionGene(key=(-19, 1), weight=-0.8219732254380585, enabl
+
+        .....

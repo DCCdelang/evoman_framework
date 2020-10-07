@@ -45,5 +45,4 @@ class Sensors():
 
         self.sensors = param_values # defines sensors state
 
-
         return numpy.array(self.sensors)

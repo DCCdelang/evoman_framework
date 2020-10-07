@@ -1,0 +1,33 @@
+Total execution time: 16.01 minutes 
+
+Generations: 10
+
+Gen Max  Mean  Std  Med
+0  3.334 -5.248 2.307 -5.838 
+
+Gen Max  Mean  Std  Med
+1  3.334 -5.162 2.245 -5.791 
+
+Gen Max  Mean  Std  Med
+2  3.334 -5.162 2.245 -5.791 
+
+Gen Max  Mean  Std  Med
+3  3.334 -5.162 2.245 -5.791 
+
+Gen Max  Mean  Std  Med
+4  3.334 -5.162 2.245 -5.791 
+
+Gen Max  Mean  Std  Med
+5  3.334 -5.162 2.245 -5.791 
+
+Gen Max  Mean  Std  Med
+6  3.334 -5.162 2.245 -5.791 
+
+Gen Max  Mean  Std  Med
+7  3.334 -5.162 2.245 -5.791 
+
+Gen Max  Mean  Std  Med
+8  3.334 -5.162 2.245 -5.791 
+
+Gen Max  Mean  Std  Med
+9  3.334 -5.162 2.245 -5.791 

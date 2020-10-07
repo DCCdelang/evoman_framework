@@ -176,18 +176,36 @@ class Player(pygame.sprite.Sprite):
 
             elif game.playermode == 'ai': # player controlled by AI algorithm
 
-
+                #############################################################
+                # Controller for GA implementation
                 # calls the controller providing game sensors
-                actions = game.player_controller.control(self.sensors.get(game), game.pcont)
+                # actions = game.player_controller.control(self.sensors.get(game), game.pcont)
+                # if len(actions) < 5:
+                #     game.print_logs("ERROR: Player controller must return 5 decision variables.")
+                #     sys.exit(0)
+                #
+                # left = actions[0]
+                # right = actions[1]
+                # jump = actions[2]
+                # shoot = actions[3]
+                # release = actions[4]
+
+                #############################################################
+                # Controller for NEAT implementation
+                # calls the controller providing game sensors
+                actions = game.player_controller.activate(self.sensors.get(game))
+                # print("sensors:", self.sensors.get(game))
+                # print("Actions", actions)
                 if len(actions) < 5:
                     game.print_logs("ERROR: Player controller must return 5 decision variables.")
                     sys.exit(0)
 
-                left = actions[0]
-                right = actions[1]
-                jump = actions[2]
-                shoot = actions[3]
-                release = actions[4]
+                left = round(actions[0])
+                right = round(actions[1])
+                jump = round(actions[2])
+                shoot = round(actions[3])
+                release = round(actions[4])
+                #############################################################
 
             # if the button is released before the jumping maximum height, them player stops going up.
             if release == 1 and self.resting == 0:

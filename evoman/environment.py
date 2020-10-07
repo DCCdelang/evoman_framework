@@ -113,10 +113,10 @@ class Environment(object):
             flags =  DOUBLEBUF  |  FULLSCREEN
         else:
             flags =  DOUBLEBUF
-        
+
         if self.fullscreen:
             flags =  DOUBLEBUF  |  FULLSCREEN
-            
+
         self.screen = pygame.display.set_mode((736, 512), flags)
 
         self.screen.set_alpha(None) # disables uneeded alpha
@@ -591,12 +591,12 @@ class Environment(object):
             venemylife.append(enemylife)
             vtime.append(time)
 
-        vfitness = self.cons_multi(numpy.array(vfitness))
-        vplayerlife = self.cons_multi(numpy.array(vplayerlife))
-        venemylife = self.cons_multi(numpy.array(venemylife))
-        vtime = self.cons_multi(numpy.array(vtime))
+        vfitness1 = self.cons_multi(numpy.array(vfitness))
+        vplayerlife1 = self.cons_multi(numpy.array(vplayerlife))
+        venemylife1 = self.cons_multi(numpy.array(venemylife))
+        vtime1 = self.cons_multi(numpy.array(vtime))
 
-        return    vfitness, vplayerlife, venemylife, vtime
+        return    vfitness1, vplayerlife1, venemylife1, vtime1, vfitness, vplayerlife, venemylife, vtime
 
 
     # checks objective mode

@@ -14,63 +14,9 @@ MESSAGE: Pygame initialized for simulation.
 
 multiple mode: yes
 
-enemies list: 7 8
+enemies list: 1 2
 
-current enemy: 7
-
-player mode: ai
-
-enemy mode: static
-
-level: 2
-
-clock precision: low
-
-inputs coded: no
-
-random initialization: no
-
-expiration time: 3000
-
-speed: fastest
-
-load player: yes
-
-load enemy: yes
-
-sound: off
-
-overture time: 100
-
-logs: on
-
-save logs: yes
-
-########## Simulation state - END ###########
-
-RUN: run status: enemy: 7; fitness: -5.703782474656201; player life: 0; enemy life: 100; time: 300
-
-RUN: run status: enemy: 8; fitness: -5.332718793265369; player life: 0; enemy life: 100; time: 207
-
-RUN: run status: enemy: 7; fitness: -2.70805020110221; player life: 0; enemy life: 100; time: 15
-
-RUN: run status: enemy: 8; fitness: -5.783825182329737; player life: 0; enemy life: 100; time: 325
-
-########## Simulation state - INI ###########
-
-# solutions # : LOADED 
-
-# sensors # : 20
-
- ------  parameters ------  
-
-# contact hurt (training agent) # : player
-
-multiple mode: yes
-
-enemies list: 7 8
-
-current enemy: 8
+current enemy: 1
 
 player mode: ai
 
@@ -101,3 +47,9 @@ logs: on
 save logs: yes
 
 ########## Simulation state - END ###########
+
+PARAMETER CHANGE: speed = normal
+
+RUN: run status: enemy: 1; fitness: 12.790513847158579; player life: 0; enemy life: 80.0; time: 183
+
+RUN: run status: enemy: 2; fitness: 85.62385026742616; player life: 8; enemy life: 0; time: 177

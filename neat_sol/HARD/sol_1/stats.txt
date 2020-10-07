@@ -1,0 +1,97 @@
+Total execution time: 139.62 minutes
+
+Amount of generations: 30
+
+Enemies: [3, 4, 6, 7]
+
+Total amount of games: 4800
+
+Gen Max   Mean   Std   Med
+0:  10.603 -4.51 5.582 -6.275 
+
+Gen Max   Mean   Std   Med
+1:  10.603 -1.918 4.83 -2.767 
+
+Gen Max   Mean   Std   Med
+2:  19.56 0.809 7.651 0.628 
+
+Gen Max   Mean   Std   Med
+3:  30.332 7.979 9.342 7.57 
+
+Gen Max   Mean   Std   Med
+4:  30.476 10.366 11.52 10.865 
+
+Gen Max   Mean   Std   Med
+5:  30.476 11.375 10.31 10.954 
+
+Gen Max   Mean   Std   Med
+6:  39.049 16.402 11.095 14.963 
+
+Gen Max   Mean   Std   Med
+7:  39.049 16.751 12.423 15.731 
+
+Gen Max   Mean   Std   Med
+8:  39.049 16.402 13.959 18.713 
+
+Gen Max   Mean   Std   Med
+9:  39.049 17.419 11.709 18.295 
+
+Gen Max   Mean   Std   Med
+10:  39.049 16.429 10.12 16.683 
+
+Gen Max   Mean   Std   Med
+11:  39.049 12.534 11.491 10.71 
+
+Gen Max   Mean   Std   Med
+12:  39.049 17.226 11.901 16.766 
+
+Gen Max   Mean   Std   Med
+13:  39.049 14.519 12.031 17.803 
+
+Gen Max   Mean   Std   Med
+14:  39.049 12.749 11.723 11.093 
+
+Gen Max   Mean   Std   Med
+15:  39.049 15.912 12.799 13.834 
+
+Gen Max   Mean   Std   Med
+16:  40.222 15.399 13.342 13.11 
+
+Gen Max   Mean   Std   Med
+17:  40.222 15.548 11.606 14.3 
+
+Gen Max   Mean   Std   Med
+18:  40.222 15.086 11.373 13.256 
+
+Gen Max   Mean   Std   Med
+19:  40.222 17.291 11.11 18.971 
+
+Gen Max   Mean   Std   Med
+20:  40.222 11.147 12.951 8.862 
+
+Gen Max   Mean   Std   Med
+21:  40.222 16.907 12.399 16.173 
+
+Gen Max   Mean   Std   Med
+22:  40.222 17.233 12.123 20.017 
+
+Gen Max   Mean   Std   Med
+23:  40.222 14.307 12.271 14.531 
+
+Gen Max   Mean   Std   Med
+24:  40.222 15.169 11.133 15.071 
+
+Gen Max   Mean   Std   Med
+25:  40.222 18.431 12.953 21.2 
+
+Gen Max   Mean   Std   Med
+26:  40.771 17.501 13.451 18.176 
+
+Gen Max   Mean   Std   Med
+27:  41.855 15.502 14.518 16.084 
+
+Gen Max   Mean   Std   Med
+28:  42.172 16.621 15.683 15.736 
+
+Gen Max   Mean   Std   Med
+29:  42.172 14.953 12.616 15.841 
