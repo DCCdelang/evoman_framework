@@ -15,13 +15,13 @@ import heapq
 
 dom_u = 1
 dom_l = -1
-bosses = [1,2,3,4]
+bosses = [1,2,5,8]
 n_bosses = len(bosses)
 n_best = 9
 n_weights = 265
 n_hidden_neurons = 10
 mutation_rate = 0.2
-gens = 200
+gens = 1000
 npop = 40
 gens_first = 15
 
@@ -350,10 +350,10 @@ def scaled_mutation(offspring, pfitness):
     for i in range(len(offspring)):
 
         # genes have a chance to mutate
-        if np.random.uniform(0, 1) > mutation_rate:
+        if np.random.uniform(0, 1) > 0.313:
 
             # mutate genes with a gaussian, suppressed by the mutation factor
-            mutation_size = mutation_factor * np.random.normal(0, 0.04)
+            mutation_size = mutation_factor * np.random.normal(0, 0.15)
 
             offspring[i] += mutation_size
 
@@ -406,175 +406,174 @@ def evolution(pop, pop_fit, positions):
 
     return pop, pop_fit
 
+for j in range(10):
+    experiment_name = f'diffusion_easy_{j}'
+    if not os.path.exists(experiment_name):
+        os.makedirs(experiment_name)
 
-experiment_name = f'diff_test3'
-if not os.path.exists(experiment_name):
-    os.makedirs(experiment_name)
+    pops = {}
 
-pops = {}
+    for i in range(n_bosses):
 
-for i in range(n_bosses):
+        # initializes simulation in individual evolution mode, for single static enemy.
+        env = Environment(experiment_name=experiment_name,
+                          enemies=[bosses[i]],
+                          playermode="ai",
+                          player_controller=player_controller(n_hidden_neurons),
+                          enemymode="static",
+                          level=2,
+                          speed="fastest")
+
+        # default environment fitness is assumed for experiment
+
+        env.state_to_log() # checks environment state
+
+
+        ####   Optimization for controller solution (best genotype-weights for phenotype-network): Ganetic Algorihm    ###
+
+        # genetic algorithm params
+
+        run_mode = 'train' # train or test
+
+        # number of weights for multilayer with 10 hidden neurons
+        n_vars = (env.get_num_sensors()+1)*n_hidden_neurons + (n_hidden_neurons+1)*5
+
+        # loads file with the best solution for testing
+        if run_mode =='test':
+
+            bsol = np.loadtxt(experiment_name+'/best.txt')
+            print( '\n RUNNING SAVED BEST SOLUTION \n')
+            env.update_parameter('speed','normal')
+            file_aux = open(experiment_name+'/gain.csv', 'a')
+            file_aux.write("Fitness Phealth Ehealth Time")
+            for i in range(5):
+                results = np.array(list(map(lambda y: env.play(y), [bsol])))
+                file_aux.write('\n'+str(results[0][0])+' '+str(results[0][1])+' '+str(results[0][2])+' '+str(results[0][3]))
+            file_aux.close()
+
+        else:
+            # initializes population loading old solutions or generating new ones
+
+            print( '\nNEW EVOLUTION\n')
+            pop = np.random.uniform(dom_l, dom_u, (npop, n_vars))
+            fit_pop = evaluate(pop)
+            best = np.argmax(fit_pop)
+            mean = np.mean(fit_pop)
+            std = np.std(fit_pop)
+            ini_g = 0
+            solutions = [pop, fit_pop]
+            env.update_solutions(solutions)
+
+
+            # evolution
+            new_best_counter = 0
+            all_time_best = 0
+            # last_sols_d = {}
+            # notimproved_d = {}
+
+            for j in range(ini_g+1, gens_first):
+
+                rounds = int(npop/5)
+                offspring = np.zeros((0, n_vars))
+                for k in range(1, rounds+1):
+
+                    # choose parents
+                    parents = parent_selection(pop, fit_pop, (k-1)*2)
+
+                    # honey, get the kids
+                    offspring_group = recombination1(parents)
+
+                    # add them to the offspring array
+                    offspring = np.concatenate((offspring, offspring_group))
+
+                # mutate half the offspring for diversity
+                offspring = mutate(offspring)
+
+                # we have the offspring, now we kill 80% of the population
+                pop = death_match(pop, fit_pop)[0]
+
+                # mutate the surviving pop as well to increase search space
+                pop = mutate(pop)
+
+                # combine the survivors with the offspring to form the new pop
+                pop = np.concatenate((pop, offspring))
+
+                # test the pop
+                fit_pop = evaluate(pop)
+
+                # get stats
+                best = np.argmax(fit_pop)
+                std  =  np.std(fit_pop)
+                mean = np.mean(fit_pop)
+
+                # if 3 generations in a row don't give a new best solution, replace a fraction of the pop
+                if fit_pop[best] > all_time_best:
+                    all_time_best = fit_pop[best]
+                    new_best_counter = 0
+
+                else:
+                    new_best_counter += 1
+
+                if new_best_counter > 3:
+                    pop = scramble_pop(pop, fit_pop, 0.3)
+                    new_best_counter = 0
+
+                # saves simulation state
+                solutions = [pop, fit_pop]
+                env.update_solutions(solutions)
+                env.save_state()
+
+            best_fit_inds = heapq.nlargest(9, fit_pop)
+            best_index = heapq.nlargest(9, range(npop), key=lambda x: fit_pop[x])
+            best_pop_inds = list(map(lambda y: pop[y], best_index))
+            pops[bosses[i]-1] = best_pop_inds
+            print(f"Completed boss {bosses[i]}")
+    print(pops)
 
     # initializes simulation in individual evolution mode, for single static enemy.
     env = Environment(experiment_name=experiment_name,
-                      enemies=[bosses[i]],
+                      enemies=bosses,
                       playermode="ai",
                       player_controller=player_controller(n_hidden_neurons),
                       enemymode="static",
                       level=2,
-                      speed="fastest")
+                      speed="fastest",
+                      multiplemode ="yes")
 
     # default environment fitness is assumed for experiment
 
-    env.state_to_log() # checks environment state
+    env.state_to_log()
 
+    ###   Optimization for controller solution (best genotype-weights for phenotype-network): Ganetic Algorihm    ###
 
-    ####   Optimization for controller solution (best genotype-weights for phenotype-network): Ganetic Algorihm    ###
+    ini = time.time()
 
     # genetic algorithm params
 
-    run_mode = 'train' # train or test
+    run_mode = 'train'
 
     # number of weights for multilayer with 10 hidden neurons
     n_vars = (env.get_num_sensors()+1)*n_hidden_neurons + (n_hidden_neurons+1)*5
 
-    # loads file with the best solution for testing
-    if run_mode =='test':
+    pops = sample_insertion(pops)
+    pop = create_grid(pops)
+    fit_pop = init_evaluate(pop)
+    positions = positions()
+    file_aux = open(experiment_name+'/results.csv', 'a')
+    file_aux.write("Generation Best Mean Std")
+    file_aux.close()
 
-        bsol = np.loadtxt(experiment_name+'/best.txt')
-        print( '\n RUNNING SAVED BEST SOLUTION \n')
-        env.update_parameter('speed','normal')
-        file_aux = open(experiment_name+'/gain.csv', 'a')
-        file_aux.write("Fitness Phealth Ehealth Time")
-        for i in range(5):
-            results = np.array(list(map(lambda y: env.play(y), [bsol])))
-            file_aux.write('\n'+str(results[0][0])+' '+str(results[0][1])+' '+str(results[0][2])+' '+str(results[0][3]))
+    for i in range(gens):
+        pop, fit = evolution(pop, fit_pop, positions)
+        print(f"Gen {i}")
+        best_in_gen = np.max(fit)
+        mean_in_gen = np.mean(fit)
+        std_in_gen = np.std(fit)
+        file_aux = open(experiment_name+'/results.csv', 'a')
+        file_aux.write('\n'+str(i)+' '+str(best_in_gen)+' '+str(mean_in_gen)+' '+str(std_in_gen))
         file_aux.close()
 
-    else:
-        # initializes population loading old solutions or generating new ones
-
-        print( '\nNEW EVOLUTION\n')
-        pop = np.random.uniform(dom_l, dom_u, (npop, n_vars))
-        fit_pop = evaluate(pop)
-        best = np.argmax(fit_pop)
-        mean = np.mean(fit_pop)
-        std = np.std(fit_pop)
-        ini_g = 0
-        solutions = [pop, fit_pop]
-        env.update_solutions(solutions)
-
-
-        # evolution
-        new_best_counter = 0
-        all_time_best = 0
-        # last_sols_d = {}
-        # notimproved_d = {}
-
-        for j in range(ini_g+1, gens_first):
-
-            rounds = int(npop/5)
-            offspring = np.zeros((0, n_vars))
-            for k in range(1, rounds+1):
-
-                # choose parents
-                parents = parent_selection(pop, fit_pop, (k-1)*2)
-
-                # honey, get the kids
-                offspring_group = recombination1(parents)
-
-                # add them to the offspring array
-                offspring = np.concatenate((offspring, offspring_group))
-
-            # mutate half the offspring for diversity
-            offspring = mutate(offspring)
-
-            # we have the offspring, now we kill 80% of the population
-            pop = death_match(pop, fit_pop)[0]
-
-            # mutate the surviving pop as well to increase search space
-            pop = mutate(pop)
-
-            # combine the survivors with the offspring to form the new pop
-            pop = np.concatenate((pop, offspring))
-
-            # test the pop
-            fit_pop = evaluate(pop)
-
-            # get stats
-            best = np.argmax(fit_pop)
-            std  =  np.std(fit_pop)
-            mean = np.mean(fit_pop)
-
-            # if 3 generations in a row don't give a new best solution, replace a fraction of the pop
-            if fit_pop[best] > all_time_best:
-                all_time_best = fit_pop[best]
-                new_best_counter = 0
-
-            else:
-                new_best_counter += 1
-
-            if new_best_counter > 3:
-                pop = scramble_pop(pop, fit_pop, 0.3)
-                new_best_counter = 0
-
-            # saves simulation state
-            solutions = [pop, fit_pop]
-            env.update_solutions(solutions)
-            env.save_state()
-
-        best_fit_inds = heapq.nlargest(9, fit_pop)
-        best_index = heapq.nlargest(9, range(npop), key=lambda x: fit_pop[x])
-        best_pop_inds = list(map(lambda y: pop[y], best_index))
-        pops[bosses[i]-1] = best_pop_inds
-        print(f"Completed boss {bosses[i]}")
-print(pops)
-
-# initializes simulation in individual evolution mode, for single static enemy.
-env = Environment(experiment_name=experiment_name,
-                  enemies=bosses,
-                  playermode="ai",
-                  player_controller=player_controller(n_hidden_neurons),
-                  enemymode="static",
-                  level=2,
-                  speed="fastest",
-                  multiplemode ="yes")
-
-# default environment fitness is assumed for experiment
-
-env.state_to_log()
-
-###   Optimization for controller solution (best genotype-weights for phenotype-network): Ganetic Algorihm    ###
-
-ini = time.time()
-
-# genetic algorithm params
-
-run_mode = 'train'
-
-# number of weights for multilayer with 10 hidden neurons
-n_vars = (env.get_num_sensors()+1)*n_hidden_neurons + (n_hidden_neurons+1)*5
-
-pops = sample_insertion(pops)
-pop = create_grid(pops)
-fit_pop = init_evaluate(pop)
-positions = positions()
-file_aux = open(experiment_name+'/results.csv', 'a')
-file_aux.write("Generation Best Mean Std")
-file_aux.close()
-
-for i in range(gens):
-    pop, fit = evolution(pop, fit_pop, positions)
-    print(f"Gen {i}")
-    best_in_gen = np.max(fit)
-    mean_in_gen = np.mean(fit)
-    std_in_gen = np.std(fit)
-    file_aux = open(experiment_name+'/results.csv', 'a')
-    file_aux.write('\n'+str(i)+' '+str(best_in_gen)+' '+str(mean_in_gen)+' '+str(std_in_gen))
-    file_aux.close()
-    if best_in_gen > 70:
-        break
-best = np.max(fit_pop)
-best_index = np.unravel_index(np.argmax(fit_pop), fit_pop.shape)
-print(f"best fitness: {best}")
-np.savetxt(experiment_name+'/best.txt',pop[best_index[0]][best_index[1]])
+    best = np.max(fit_pop)
+    best_index = np.unravel_index(np.argmax(fit_pop), fit_pop.shape)
+    print(f"best fitness: {best}")
+    np.savetxt(experiment_name+'/best.txt',pop[best_index[0]][best_index[1]])
