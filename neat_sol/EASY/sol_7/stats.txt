@@ -1,0 +1,97 @@
+Total execution time: 55.62 minutes
+
+Amount of generations: 30
+
+Enemies: [1, 2, 5, 8]
+
+Total amount of games: 4800
+
+Gen Max   Mean   Std   Med
+0:  20.041 -4.024 7.068 -6.0 
+
+Gen Max   Mean   Std   Med
+1:  28.961 0.877 11.56 -3.745 
+
+Gen Max   Mean   Std   Med
+2:  51.795 16.544 12.899 18.014 
+
+Gen Max   Mean   Std   Med
+3:  51.941 16.128 14.423 16.8 
+
+Gen Max   Mean   Std   Med
+4:  52.548 20.072 17.1 21.638 
+
+Gen Max   Mean   Std   Med
+5:  57.868 29.372 15.915 31.822 
+
+Gen Max   Mean   Std   Med
+6:  58.142 24.046 19.879 21.832 
+
+Gen Max   Mean   Std   Med
+7:  57.874 24.93 17.486 25.695 
+
+Gen Max   Mean   Std   Med
+8:  62.115 24.222 19.915 25.029 
+
+Gen Max   Mean   Std   Med
+9:  62.089 22.019 20.929 21.34 
+
+Gen Max   Mean   Std   Med
+10:  62.855 28.071 21.101 29.283 
+
+Gen Max   Mean   Std   Med
+11:  75.083 29.378 20.076 27.916 
+
+Gen Max   Mean   Std   Med
+12:  75.081 29.454 18.23 29.363 
+
+Gen Max   Mean   Std   Med
+13:  75.025 30.129 23.519 29.384 
+
+Gen Max   Mean   Std   Med
+14:  75.331 32.271 23.975 30.27 
+
+Gen Max   Mean   Std   Med
+15:  75.384 37.945 21.133 38.293 
+
+Gen Max   Mean   Std   Med
+16:  75.391 35.409 23.273 39.045 
+
+Gen Max   Mean   Std   Med
+17:  75.241 43.052 21.791 42.178 
+
+Gen Max   Mean   Std   Med
+18:  79.253 31.86 27.49 29.947 
+
+Gen Max   Mean   Std   Med
+19:  80.269 40.578 23.309 42.332 
+
+Gen Max   Mean   Std   Med
+20:  80.239 38.809 21.048 39.643 
+
+Gen Max   Mean   Std   Med
+21:  80.33 36.084 22.794 38.223 
+
+Gen Max   Mean   Std   Med
+22:  80.287 32.819 27.734 29.409 
+
+Gen Max   Mean   Std   Med
+23:  80.323 41.608 27.41 43.031 
+
+Gen Max   Mean   Std   Med
+24:  84.673 37.983 23.04 37.475 
+
+Gen Max   Mean   Std   Med
+25:  84.689 29.445 25.516 31.57 
+
+Gen Max   Mean   Std   Med
+26:  84.649 37.295 21.198 37.308 
+
+Gen Max   Mean   Std   Med
+27:  87.578 33.443 24.747 34.921 
+
+Gen Max   Mean   Std   Med
+28:  87.567 29.387 26.737 35.87 
+
+Gen Max   Mean   Std   Med
+29:  87.609 36.893 24.361 35.96 

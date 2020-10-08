@@ -13,10 +13,12 @@ from math import fabs,sqrt
 import glob, os
 import neat
 import visualize
-os.environ["PATH"] += os.pathsep + 'D:/Program Files (x86)/Graphviz2.38/bin/'
+import pickle
+# os.environ["PATH"] += os.pathsep + 'D:/Program Files (x86)/Graphviz2.38/bin/'
+# os.environ["PATH"] += os.pathsep + 'c:/users/loek/appdata/local/programs/python/python37/lib/site-packages'
 
 
-experiment_name = 'multi_demo_neat'
+experiment_name = 'multi_demo_neat_easy'
 if not os.path.exists(experiment_name):
     os.makedirs(experiment_name)
 
@@ -26,7 +28,7 @@ EASY = [1,2,5,8]
 HARD = [3,4,6,7]
 
 env = Environment(experiment_name=experiment_name,
-                  enemies=HARD,
+                  enemies=EASY,
                   multiplemode="yes",
                   playermode="ai",
                   # player_controller=player_controller(0),
@@ -48,7 +50,7 @@ run_mode = 'train' # train or test
 
 np.random.seed(420)
 
-GEN = 20
+GEN = 30
 MAXFIT = -10
 TOTALGAMES = 0
 
@@ -76,6 +78,7 @@ def eval_genome(genomes,config):
         f,p,e,t,fl,pl,el,tl = env.play()
         genome.fitness = f
         if f > MAXFIT:
+            MAXFIT = f
             file_aux  = open(experiment_name+'/bestgenome.txt','w')
             file_aux.write("Enemies: "+ str(env.enemies)+"\nFitness: "+ str(fl)+"\nPlayerlife: "+ str(pl)+"\nEnemylife: "+ str(el)+"\nTime: "+ str(tl)+ "\n\n")
             file_aux.close()
@@ -99,6 +102,7 @@ def run(config_file):
     pop.add_reporter(stats)
     # giving fitness function and amount of generations
     winner = pop.run(eval_genome,GEN)
+    pickle.dump(winner, open('winner.pkl', 'wb'))
 
     print('\nBest man:\n{!s}'.format(winner))
 
@@ -109,8 +113,8 @@ def run(config_file):
     file_aux.write('\n\nAmount of generations: '+str(GEN))
     file_aux.close()
 
-    visualize.draw_net(config, winner, True)
-    visualize.plot_stats(stats, ylog=False, view=True)
+    # visualize.draw_net(config, winner, True)
+    # visualize.plot_stats(stats, ylog=False, view=True)
 
     # stats.save()
     # top5 = str(stats.best_genomes(5))
