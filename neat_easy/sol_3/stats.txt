@@ -1,0 +1,97 @@
+Total execution time: 78.08 minutes
+
+Amount of generations: 30
+
+Enemies: [1, 2, 5, 8]
+
+Total amount of games: 4800
+
+Gen Max   Mean   Std   Med
+0:  20.795 -4.71 7.199 -6.029 
+
+Gen Max   Mean   Std   Med
+1:  47.236 4.067 12.374 1.745 
+
+Gen Max   Mean   Std   Med
+2:  52.695 16.594 13.803 16.333 
+
+Gen Max   Mean   Std   Med
+3:  52.605 13.923 15.2 13.361 
+
+Gen Max   Mean   Std   Med
+4:  52.779 18.503 15.313 17.399 
+
+Gen Max   Mean   Std   Med
+5:  52.771 19.744 19.204 21.987 
+
+Gen Max   Mean   Std   Med
+6:  52.667 20.868 17.118 21.603 
+
+Gen Max   Mean   Std   Med
+7:  60.038 26.249 14.436 25.338 
+
+Gen Max   Mean   Std   Med
+8:  60.227 20.529 16.245 20.078 
+
+Gen Max   Mean   Std   Med
+9:  60.452 24.825 16.903 24.954 
+
+Gen Max   Mean   Std   Med
+10:  70.162 32.524 20.574 35.426 
+
+Gen Max   Mean   Std   Med
+11:  68.839 26.454 22.207 30.893 
+
+Gen Max   Mean   Std   Med
+12:  70.146 35.871 20.065 39.534 
+
+Gen Max   Mean   Std   Med
+13:  64.852 26.18 23.472 19.909 
+
+Gen Max   Mean   Std   Med
+14:  75.519 33.602 24.063 36.23 
+
+Gen Max   Mean   Std   Med
+15:  74.913 35.921 20.851 39.47 
+
+Gen Max   Mean   Std   Med
+16:  75.512 37.262 23.174 39.297 
+
+Gen Max   Mean   Std   Med
+17:  79.294 36.502 26.644 39.774 
+
+Gen Max   Mean   Std   Med
+18:  79.291 38.684 22.593 35.877 
+
+Gen Max   Mean   Std   Med
+19:  75.509 34.45 19.671 34.508 
+
+Gen Max   Mean   Std   Med
+20:  73.256 35.139 19.59 37.751 
+
+Gen Max   Mean   Std   Med
+21:  78.923 34.763 22.64 35.284 
+
+Gen Max   Mean   Std   Med
+22:  75.521 36.866 21.961 41.931 
+
+Gen Max   Mean   Std   Med
+23:  66.197 33.167 22.925 38.646 
+
+Gen Max   Mean   Std   Med
+24:  79.259 43.564 16.12 45.508 
+
+Gen Max   Mean   Std   Med
+25:  79.29 35.094 24.304 39.394 
+
+Gen Max   Mean   Std   Med
+26:  79.289 32.89 25.51 38.012 
+
+Gen Max   Mean   Std   Med
+27:  80.038 33.366 22.481 36.048 
+
+Gen Max   Mean   Std   Med
+28:  86.326 43.464 25.002 49.436 
+
+Gen Max   Mean   Std   Med
+29:  86.321 39.783 23.728 40.32 

@@ -1,0 +1,97 @@
+Total execution time: 86.34 minutes
+
+Amount of generations: 30
+
+Enemies: [1, 2, 5, 8]
+
+Total amount of games: 4800
+
+Gen Max   Mean   Std   Med
+0:  24.481 -1.989 8.785 -5.954 
+
+Gen Max   Mean   Std   Med
+1:  38.645 6.955 13.228 6.701 
+
+Gen Max   Mean   Std   Med
+2:  38.649 11.849 11.463 9.432 
+
+Gen Max   Mean   Std   Med
+3:  40.966 11.027 13.67 7.882 
+
+Gen Max   Mean   Std   Med
+4:  47.332 18.174 15.079 16.229 
+
+Gen Max   Mean   Std   Med
+5:  48.855 26.836 15.009 30.402 
+
+Gen Max   Mean   Std   Med
+6:  53.262 24.567 19.172 21.46 
+
+Gen Max   Mean   Std   Med
+7:  53.262 29.554 16.688 34.531 
+
+Gen Max   Mean   Std   Med
+8:  54.704 30.476 17.911 34.918 
+
+Gen Max   Mean   Std   Med
+9:  55.029 30.053 17.126 28.913 
+
+Gen Max   Mean   Std   Med
+10:  54.957 34.922 14.793 40.144 
+
+Gen Max   Mean   Std   Med
+11:  55.123 32.993 16.283 33.62 
+
+Gen Max   Mean   Std   Med
+12:  55.27 33.438 20.179 41.8 
+
+Gen Max   Mean   Std   Med
+13:  55.537 30.506 18.489 30.504 
+
+Gen Max   Mean   Std   Med
+14:  55.581 30.558 20.101 37.255 
+
+Gen Max   Mean   Std   Med
+15:  55.113 28.786 19.608 33.067 
+
+Gen Max   Mean   Std   Med
+16:  55.022 27.581 18.591 27.509 
+
+Gen Max   Mean   Std   Med
+17:  54.902 30.426 18.42 31.744 
+
+Gen Max   Mean   Std   Med
+18:  61.493 32.664 17.842 37.446 
+
+Gen Max   Mean   Std   Med
+19:  61.54 35.104 15.809 39.317 
+
+Gen Max   Mean   Std   Med
+20:  61.747 33.996 21.064 37.615 
+
+Gen Max   Mean   Std   Med
+21:  61.631 38.573 15.72 39.339 
+
+Gen Max   Mean   Std   Med
+22:  61.933 34.133 20.388 39.048 
+
+Gen Max   Mean   Std   Med
+23:  61.655 31.831 17.914 31.248 
+
+Gen Max   Mean   Std   Med
+24:  61.659 34.077 20.593 38.477 
+
+Gen Max   Mean   Std   Med
+25:  61.796 38.342 16.357 41.828 
+
+Gen Max   Mean   Std   Med
+26:  61.917 39.906 15.924 43.04 
+
+Gen Max   Mean   Std   Med
+27:  61.642 33.138 19.696 40.374 
+
+Gen Max   Mean   Std   Med
+28:  61.656 32.19 19.8 30.443 
+
+Gen Max   Mean   Std   Med
+29:  61.723 36.011 19.899 38.142 
