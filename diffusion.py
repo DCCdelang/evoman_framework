@@ -30,18 +30,18 @@ def simulation(env,x):
     f,p,e,t = env.play(pcont=x)
     return f
 
-# # normalizes
-# def norm(x, pfit_pop):
-#
-#     if ( max(pfit_pop) - min(pfit_pop) ) > 0:
-#         x_norm = ( x - min(pfit_pop) )/( max(pfit_pop) - min(pfit_pop) )
-#     else:
-#         x_norm = 0
-#
-#
-#     if x_norm <= 0:
-#         x_norm = 0.0000000001
-#     return x_norm
+# normalizes
+def norm(x, pfit_pop):
+
+    if ( max(pfit_pop) - min(pfit_pop) ) > 0:
+        x_norm = ( x - min(pfit_pop) )/( max(pfit_pop) - min(pfit_pop) )
+    else:
+        x_norm = 0
+
+
+    if x_norm <= 0:
+        x_norm = 0.0000000001
+    return x_norm
 
 
 # evaluation
@@ -182,8 +182,8 @@ def sample_insertion(pops):
     sample_list = [0] * n_bosses
     for i in range(n_bosses):
         random_sample = random.randint(0, n_best-1)
-        sample_list[i] = pops[i][random_sample]
-        pops[i] = np.delete(pops[i], random_sample, axis=0)
+        sample_list[i] = pops[bosses[i]][random_sample]
+        pops[bosses[i]] = np.delete(pops[bosses[i]], random_sample, axis=0)
 
     # takes a random indivual from the sample list and inserts it in a different cell
     for j in range(n_bosses):
@@ -191,7 +191,7 @@ def sample_insertion(pops):
         while random_insertion == j:
             random_insertion = random.randint(0, n_bosses-1)
         random_location = random.randint(0, n_best-2)
-        pops[j] = np.insert(pops[j], random_location ,sample_list[random_insertion], axis=0)
+        pops[bosses[j]] = np.insert(pops[bosses[j]], random_location ,sample_list[random_insertion], axis=0)
     return pops
 
 def create_grid(pops):
@@ -200,11 +200,11 @@ def create_grid(pops):
     Returns either a 2x2, 2x3 or 2x4 cells grid depending on the number of bosses.
     """
     # Creates random grid order in which the grids will be built
-    grid_order = random.sample(range(n_bosses), n_bosses)
+    grid_order = random.sample(bosses, n_bosses)
 
     # reshapes list in dictionary to form a grid block
     for i in range(n_bosses):
-        pops[i] = pops[i].reshape((int(math.sqrt(n_best)), int(math.sqrt(n_best)), n_weights))
+        pops[bosses[i]] = pops[bosses[i]].reshape((int(math.sqrt(n_best)), int(math.sqrt(n_best)), n_weights))
         # pops[i] = pops[i].reshape((int(math.sqrt(n_best)), int(math.sqrt(n_best))))
 
     # Creates two vertical rows of grid blocks depending on the number of cells
@@ -406,7 +406,9 @@ def evolution(pop, pop_fit, positions):
 
     return pop, pop_fit
 
-for j in range(10):
+positions = positions()
+
+for j in range(1):
     experiment_name = f'diffusion_easy_{j}'
     if not os.path.exists(experiment_name):
         os.makedirs(experiment_name)
@@ -526,7 +528,7 @@ for j in range(10):
             best_fit_inds = heapq.nlargest(9, fit_pop)
             best_index = heapq.nlargest(9, range(npop), key=lambda x: fit_pop[x])
             best_pop_inds = list(map(lambda y: pop[y], best_index))
-            pops[bosses[i]-1] = best_pop_inds
+            pops[bosses[i]] = best_pop_inds
             print(f"Completed boss {bosses[i]}")
     print(pops)
 
@@ -558,7 +560,6 @@ for j in range(10):
     pops = sample_insertion(pops)
     pop = create_grid(pops)
     fit_pop = init_evaluate(pop)
-    positions = positions()
     file_aux = open(experiment_name+'/results.csv', 'a')
     file_aux.write("Generation Best Mean Std")
     file_aux.close()
@@ -572,7 +573,6 @@ for j in range(10):
         file_aux = open(experiment_name+'/results.csv', 'a')
         file_aux.write('\n'+str(i)+' '+str(best_in_gen)+' '+str(mean_in_gen)+' '+str(std_in_gen))
         file_aux.close()
-
     best = np.max(fit_pop)
     best_index = np.unravel_index(np.argmax(fit_pop), fit_pop.shape)
     print(f"best fitness: {best}")
