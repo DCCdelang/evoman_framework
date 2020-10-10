@@ -1,0 +1,97 @@
+Total execution time: 132.34 minutes
+
+Amount of generations: 30
+
+Enemies: [3, 4, 6, 7]
+
+Total amount of games: 4800
+
+Gen Max   Mean   Std   Med
+0:  7.179 -5.443 4.128 -6.132 
+
+Gen Max   Mean   Std   Med
+1:  10.907 -1.118 5.653 -2.046 
+
+Gen Max   Mean   Std   Med
+2:  21.49 4.259 7.141 3.641 
+
+Gen Max   Mean   Std   Med
+3:  21.49 5.109 7.655 4.425 
+
+Gen Max   Mean   Std   Med
+4:  30.323 8.962 9.214 6.93 
+
+Gen Max   Mean   Std   Med
+5:  30.323 8.53 10.016 6.819 
+
+Gen Max   Mean   Std   Med
+6:  30.323 8.574 9.252 8.372 
+
+Gen Max   Mean   Std   Med
+7:  31.808 12.668 9.974 12.13 
+
+Gen Max   Mean   Std   Med
+8:  32.842 13.54 11.134 15.738 
+
+Gen Max   Mean   Std   Med
+9:  32.842 13.657 10.442 13.217 
+
+Gen Max   Mean   Std   Med
+10:  42.611 11.22 10.624 9.259 
+
+Gen Max   Mean   Std   Med
+11:  42.611 12.26 11.2 12.544 
+
+Gen Max   Mean   Std   Med
+12:  42.611 9.348 10.808 7.94 
+
+Gen Max   Mean   Std   Med
+13:  42.611 11.548 12.173 10.152 
+
+Gen Max   Mean   Std   Med
+14:  42.611 12.972 11.754 12.401 
+
+Gen Max   Mean   Std   Med
+15:  42.611 11.189 12.053 9.106 
+
+Gen Max   Mean   Std   Med
+16:  42.611 10.402 12.377 7.289 
+
+Gen Max   Mean   Std   Med
+17:  42.611 13.241 12.871 10.331 
+
+Gen Max   Mean   Std   Med
+18:  42.611 11.987 11.443 11.337 
+
+Gen Max   Mean   Std   Med
+19:  42.611 11.786 12.546 7.819 
+
+Gen Max   Mean   Std   Med
+20:  42.611 10.526 11.493 9.215 
+
+Gen Max   Mean   Std   Med
+21:  42.611 14.129 12.389 14.142 
+
+Gen Max   Mean   Std   Med
+22:  42.611 13.575 10.95 12.497 
+
+Gen Max   Mean   Std   Med
+23:  42.611 12.307 12.139 12.308 
+
+Gen Max   Mean   Std   Med
+24:  42.611 11.185 12.082 9.005 
+
+Gen Max   Mean   Std   Med
+25:  42.611 12.764 11.206 11.753 
+
+Gen Max   Mean   Std   Med
+26:  42.611 13.632 11.916 14.236 
+
+Gen Max   Mean   Std   Med
+27:  42.611 11.698 13.688 10.777 
+
+Gen Max   Mean   Std   Med
+28:  42.611 16.622 12.1 17.026 
+
+Gen Max   Mean   Std   Med
+29:  42.611 17.288 13.719 18.905 
