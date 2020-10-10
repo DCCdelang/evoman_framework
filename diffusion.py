@@ -30,18 +30,18 @@ def simulation(env,x):
     f,p,e,t = env.play(pcont=x)
     return f
 
-# # normalizes
-# def norm(x, pfit_pop):
-#
-#     if ( max(pfit_pop) - min(pfit_pop) ) > 0:
-#         x_norm = ( x - min(pfit_pop) )/( max(pfit_pop) - min(pfit_pop) )
-#     else:
-#         x_norm = 0
-#
-#
-#     if x_norm <= 0:
-#         x_norm = 0.0000000001
-#     return x_norm
+# normalizes
+def norm(x, pfit_pop):
+
+    if ( max(pfit_pop) - min(pfit_pop) ) > 0:
+        x_norm = ( x - min(pfit_pop) )/( max(pfit_pop) - min(pfit_pop) )
+    else:
+        x_norm = 0
+
+
+    if x_norm <= 0:
+        x_norm = 0.0000000001
+    return x_norm
 
 
 # evaluation
@@ -406,8 +406,10 @@ def evolution(pop, pop_fit, positions):
 
     return pop, pop_fit
 
-for j in range(9,10):
-    experiment_name = f'diffusion_hard_{j}'
+positions = positions()
+
+for j in range(1):
+    experiment_name = f'diffusion_easy_{j}'
     if not os.path.exists(experiment_name):
         os.makedirs(experiment_name)
 
@@ -558,7 +560,6 @@ for j in range(9,10):
     pops = sample_insertion(pops)
     pop = create_grid(pops)
     fit_pop = init_evaluate(pop)
-    positions = positions()
     file_aux = open(experiment_name+'/results.csv', 'a')
     file_aux.write("Generation Best Mean Std")
     file_aux.close()
@@ -572,7 +573,6 @@ for j in range(9,10):
         file_aux = open(experiment_name+'/results.csv', 'a')
         file_aux.write('\n'+str(i)+' '+str(best_in_gen)+' '+str(mean_in_gen)+' '+str(std_in_gen))
         file_aux.close()
-
     best = np.max(fit_pop)
     best_index = np.unravel_index(np.argmax(fit_pop), fit_pop.shape)
     print(f"best fitness: {best}")
