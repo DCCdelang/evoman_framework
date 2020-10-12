@@ -1,67 +1,97 @@
-Total execution time: 147.46 minutes
+Total execution time: 119.79 minutes
 
-Amount of generations: 20
+Amount of generations: 30
 
 Enemies: [3, 4, 6, 7]
 
 Total amount of games: 4800
 
 Gen Max   Mean   Std   Med
-0:  24.104 -3.426 6.941 -5.83 
+0:  6.008 -5.408 3.641 -6.038 
 
 Gen Max   Mean   Std   Med
-1:  24.104 2.786 7.545 1.726 
+1:  13.744 -1.686 5.837 -2.196 
 
 Gen Max   Mean   Std   Med
-2:  24.104 2.84 8.283 3.39 
+2:  13.744 -0.064 5.966 -1.346 
 
 Gen Max   Mean   Std   Med
-3:  24.104 4.298 8.358 3.846 
+3:  19.893 2.623 7.907 1.112 
 
 Gen Max   Mean   Std   Med
-4:  28.931 5.248 9.278 4.929 
+4:  30.07 5.253 9.167 2.75 
 
 Gen Max   Mean   Std   Med
-5:  36.659 6.47 9.383 6.38 
+5:  30.07 4.213 10.186 2.284 
 
 Gen Max   Mean   Std   Med
-6:  37.241 7.764 9.577 6.085 
+6:  30.303 4.877 9.47 2.215 
 
 Gen Max   Mean   Std   Med
-7:  37.241 7.411 11.107 4.868 
+7:  30.303 6.176 10.115 6.313 
 
 Gen Max   Mean   Std   Med
-8:  37.241 10.07 10.014 10.015 
+8:  30.303 8.751 11.013 8.77 
 
 Gen Max   Mean   Std   Med
-9:  37.241 11.872 10.942 12.782 
+9:  30.303 10.731 10.346 12.073 
 
 Gen Max   Mean   Std   Med
-10:  37.241 11.429 11.685 11.044 
+10:  30.303 9.97 9.07 11.19 
 
 Gen Max   Mean   Std   Med
-11:  37.241 9.429 9.979 8.468 
+11:  30.303 10.938 9.684 10.508 
 
 Gen Max   Mean   Std   Med
-12:  37.241 11.68 12.32 10.901 
+12:  30.303 12.558 11.124 12.657 
 
 Gen Max   Mean   Std   Med
-13:  37.241 10.544 10.925 10.356 
+13:  30.565 10.677 9.473 10.046 
 
 Gen Max   Mean   Std   Med
-14:  37.241 11.75 11.791 13.696 
+14:  30.565 11.115 11.386 10.097 
 
 Gen Max   Mean   Std   Med
-15:  37.241 13.873 11.604 12.291 
+15:  33.402 12.156 11.981 10.887 
 
 Gen Max   Mean   Std   Med
-16:  37.898 13.413 11.761 13.434 
+16:  37.406 13.458 11.485 15.574 
 
 Gen Max   Mean   Std   Med
-17:  37.898 13.397 9.192 12.963 
+17:  37.406 15.213 9.554 15.411 
 
 Gen Max   Mean   Std   Med
-18:  40.219 14.776 11.585 14.494 
+18:  37.406 8.745 11.828 8.384 
 
 Gen Max   Mean   Std   Med
-19:  40.219 14.767 11.531 14.993 
+19:  37.406 10.611 10.026 9.826 
+
+Gen Max   Mean   Std   Med
+20:  38.881 11.983 12.51 12.426 
+
+Gen Max   Mean   Std   Med
+21:  38.881 11.558 12.599 13.38 
+
+Gen Max   Mean   Std   Med
+22:  38.881 16.667 9.791 15.464 
+
+Gen Max   Mean   Std   Med
+23:  38.881 13.08 12.777 15.65 
+
+Gen Max   Mean   Std   Med
+24:  38.881 14.946 12.247 15.26 
+
+Gen Max   Mean   Std   Med
+25:  39.488 13.069 13.247 12.356 
+
+Gen Max   Mean   Std   Med
+26:  39.488 15.343 10.557 15.232 
+
+Gen Max   Mean   Std   Med
+27:  39.488 15.567 13.084 16.915 
+
+Gen Max   Mean   Std   Med
+28:  39.488 15.872 12.647 17.366 
+
+Gen Max   Mean   Std   Med
+29:  39.488 15.399 12.751 15.289 

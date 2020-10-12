@@ -1,0 +1,97 @@
+Total execution time: 70.3 minutes
+
+Amount of generations: 30
+
+Enemies: [1, 2, 5, 8]
+
+Total amount of games: 4800
+
+Gen Max   Mean   Std   Med
+0:  19.138 -3.975 7.749 -6.178 
+
+Gen Max   Mean   Std   Med
+1:  46.706 6.302 14.022 5.494 
+
+Gen Max   Mean   Std   Med
+2:  46.605 11.835 11.46 11.06 
+
+Gen Max   Mean   Std   Med
+3:  46.826 13.635 13.381 14.204 
+
+Gen Max   Mean   Std   Med
+4:  46.793 16.084 13.345 15.935 
+
+Gen Max   Mean   Std   Med
+5:  52.173 17.426 16.376 12.749 
+
+Gen Max   Mean   Std   Med
+6:  59.03 22.959 18.89 21.233 
+
+Gen Max   Mean   Std   Med
+7:  59.065 26.556 16.618 28.546 
+
+Gen Max   Mean   Std   Med
+8:  59.05 26.679 19.507 25.193 
+
+Gen Max   Mean   Std   Med
+9:  73.263 37.273 16.199 40.782 
+
+Gen Max   Mean   Std   Med
+10:  73.246 41.561 18.573 43.545 
+
+Gen Max   Mean   Std   Med
+11:  73.288 36.837 23.23 43.897 
+
+Gen Max   Mean   Std   Med
+12:  73.275 37.008 21.164 40.658 
+
+Gen Max   Mean   Std   Med
+13:  73.189 33.565 22.8 37.99 
+
+Gen Max   Mean   Std   Med
+14:  73.527 38.155 20.896 42.129 
+
+Gen Max   Mean   Std   Med
+15:  73.497 38.24 24.339 41.372 
+
+Gen Max   Mean   Std   Med
+16:  73.528 34.936 22.52 38.52 
+
+Gen Max   Mean   Std   Med
+17:  73.697 40.175 23.748 42.793 
+
+Gen Max   Mean   Std   Med
+18:  74.217 41.07 25.19 47.109 
+
+Gen Max   Mean   Std   Med
+19:  73.907 38.854 25.651 41.832 
+
+Gen Max   Mean   Std   Med
+20:  74.157 47.598 20.291 50.253 
+
+Gen Max   Mean   Std   Med
+21:  74.248 42.053 23.928 42.902 
+
+Gen Max   Mean   Std   Med
+22:  74.392 45.513 20.965 47.633 
+
+Gen Max   Mean   Std   Med
+23:  80.571 51.521 17.904 53.875 
+
+Gen Max   Mean   Std   Med
+24:  80.401 46.896 23.952 53.283 
+
+Gen Max   Mean   Std   Med
+25:  80.245 43.916 20.969 51.207 
+
+Gen Max   Mean   Std   Med
+26:  80.52 42.227 21.633 47.674 
+
+Gen Max   Mean   Std   Med
+27:  80.32 41.074 21.818 44.682 
+
+Gen Max   Mean   Std   Med
+28:  80.321 39.148 26.077 45.783 
+
+Gen Max   Mean   Std   Med
+29:  80.214 44.184 23.783 48.917 

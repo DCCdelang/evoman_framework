@@ -1,0 +1,97 @@
+Total execution time: 53.7 minutes
+
+Amount of generations: 30
+
+Enemies: [1, 2, 5, 8]
+
+Total amount of games: 4800
+
+Gen Max   Mean   Std   Med
+0:  21.725 -5.039 8.933 -6.602 
+
+Gen Max   Mean   Std   Med
+1:  43.99 6.912 11.067 7.23 
+
+Gen Max   Mean   Std   Med
+2:  50.692 11.589 14.007 9.15 
+
+Gen Max   Mean   Std   Med
+3:  51.718 16.373 14.46 15.656 
+
+Gen Max   Mean   Std   Med
+4:  51.716 17.858 17.14 17.629 
+
+Gen Max   Mean   Std   Med
+5:  55.196 20.205 17.629 18.818 
+
+Gen Max   Mean   Std   Med
+6:  55.366 21.91 17.106 21.652 
+
+Gen Max   Mean   Std   Med
+7:  55.37 16.352 19.689 13.864 
+
+Gen Max   Mean   Std   Med
+8:  55.379 20.772 16.7 17.63 
+
+Gen Max   Mean   Std   Med
+9:  63.591 24.983 20.886 24.662 
+
+Gen Max   Mean   Std   Med
+10:  63.557 28.869 18.293 33.131 
+
+Gen Max   Mean   Std   Med
+11:  63.549 25.102 17.12 24.94 
+
+Gen Max   Mean   Std   Med
+12:  63.664 21.149 18.748 19.243 
+
+Gen Max   Mean   Std   Med
+13:  63.633 25.37 19.445 24.998 
+
+Gen Max   Mean   Std   Med
+14:  63.601 26.764 17.957 30.426 
+
+Gen Max   Mean   Std   Med
+15:  63.577 29.261 15.626 29.826 
+
+Gen Max   Mean   Std   Med
+16:  63.32 26.879 20.126 27.951 
+
+Gen Max   Mean   Std   Med
+17:  67.467 28.578 18.257 27.853 
+
+Gen Max   Mean   Std   Med
+18:  67.339 31.396 20.621 33.654 
+
+Gen Max   Mean   Std   Med
+19:  67.616 33.686 18.13 38.347 
+
+Gen Max   Mean   Std   Med
+20:  67.509 26.017 19.068 25.37 
+
+Gen Max   Mean   Std   Med
+21:  67.381 21.294 20.112 17.274 
+
+Gen Max   Mean   Std   Med
+22:  67.299 31.288 17.956 34.211 
+
+Gen Max   Mean   Std   Med
+23:  68.057 25.437 22.641 24.299 
+
+Gen Max   Mean   Std   Med
+24:  68.07 28.357 23.503 31.779 
+
+Gen Max   Mean   Std   Med
+25:  68.27 31.296 21.149 32.326 
+
+Gen Max   Mean   Std   Med
+26:  68.07 31.682 20.301 29.924 
+
+Gen Max   Mean   Std   Med
+27:  68.019 29.447 23.07 29.327 
+
+Gen Max   Mean   Std   Med
+28:  68.063 29.882 23.76 31.789 
+
+Gen Max   Mean   Std   Med
+29:  68.063 23.773 23.044 26.954 

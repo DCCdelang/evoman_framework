@@ -1,0 +1,122 @@
+[[20.5], [57.875], [94.775], [132.975], [169.975], [206.925], [246.725], [285.3], [321.4], [359.55], [395.65], [435.775], [475.825], [511.925], [550.2], [588.55], [626.25], [662.35], [700.075], [737.825], [778.875], [814.975], [851.075], [887.175], [927.95], [964.6], [1000.7], [1036.8], [1080.35], [1116.45]]
+
+
+Gen 0
+ID fitness
+0:  20.5
+
+Gen 1
+ID fitness
+0:  57.875
+
+Gen 2
+ID fitness
+0:  94.775
+
+Gen 3
+ID fitness
+0:  132.975
+
+Gen 4
+ID fitness
+0:  169.975
+
+Gen 5
+ID fitness
+0:  206.925
+
+Gen 6
+ID fitness
+0:  246.725
+
+Gen 7
+ID fitness
+0:  285.3
+
+Gen 8
+ID fitness
+0:  321.4
+
+Gen 9
+ID fitness
+0:  359.55
+
+Gen 10
+ID fitness
+0:  395.65
+
+Gen 11
+ID fitness
+0:  435.775
+
+Gen 12
+ID fitness
+0:  475.825
+
+Gen 13
+ID fitness
+0:  511.925
+
+Gen 14
+ID fitness
+0:  550.2
+
+Gen 15
+ID fitness
+0:  588.55
+
+Gen 16
+ID fitness
+0:  626.25
+
+Gen 17
+ID fitness
+0:  662.35
+
+Gen 18
+ID fitness
+0:  700.075
+
+Gen 19
+ID fitness
+0:  737.825
+
+Gen 20
+ID fitness
+0:  778.875
+
+Gen 21
+ID fitness
+0:  814.975
+
+Gen 22
+ID fitness
+0:  851.075
+
+Gen 23
+ID fitness
+0:  887.175
+
+Gen 24
+ID fitness
+0:  927.95
+
+Gen 25
+ID fitness
+0:  964.6
+
+Gen 26
+ID fitness
+0:  1000.7
+
+Gen 27
+ID fitness
+0:  1036.8
+
+Gen 28
+ID fitness
+0:  1080.35
+
+Gen 29
+ID fitness
+0:  1116.45

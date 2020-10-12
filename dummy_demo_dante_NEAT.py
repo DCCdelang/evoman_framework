@@ -18,7 +18,7 @@ import pickle
 os.environ["PATH"] += os.pathsep + 'D:/Program Files (x86)/Graphviz2.38/bin/'
 
 
-experiment_name = 'multi_demo_neat'
+experiment_name = 'multi_demo_neat_easy'
 if not os.path.exists(experiment_name):
     os.makedirs(experiment_name)
 
@@ -26,9 +26,10 @@ if not os.path.exists(experiment_name):
 
 EASY = [1,2,5,8]
 HARD = [3,4,6,7]
+ALL = [1,2,3,4,5,6,7,8]
 
 env = Environment(experiment_name=experiment_name,
-                  enemies=HARD,
+                  enemies=ALL,
                   multiplemode="yes",
                   playermode="ai",
                   # player_controller=player_controller(0),
@@ -46,7 +47,7 @@ ini = time.time()  # sets time marker
 
 # genetic algorithm params
 
-run_mode = 'train' # train or test
+run_mode = 'test' # train or test
 
 
 np.random.seed(420)
@@ -148,7 +149,7 @@ def run(config_file):
     file_aux.close()
 
 # Function to replay best topology from pickle file
-def replay_genome(config_path="neat_test/config-feedforward.txt", genome_path="neat_test/winner.pkl"):
+def replay_genome(config_path, genome_path):
     # Load requried NEAT config
     config = neat.Config(neat.DefaultGenome, neat.DefaultReproduction,
                          neat.DefaultSpeciesSet, neat.DefaultStagnation,
@@ -162,10 +163,24 @@ def replay_genome(config_path="neat_test/config-feedforward.txt", genome_path="n
     env.player_controller = net
     f,p,e,t,fl,pl,el,tl = env.play()
     genome.fitness = f
+    return f,p,e,t,fl,pl,el,tl
 
 # Calls replay function to test winning situation
 if run_mode =='test':
-    replay_genome()
+    file_aux  = open('gain_results/EASYgain.txt','w')
+    file_aux.write("Sol Run Kill Gain Pe Ee Fit Gainl Pl El Fl\n\n")
+    for sol in range(10):
+        for run in range(5):
+            path = "neat_sol/EASY/sol_"+str(sol)+"/winner.pkl"
+            print(path)
+            f,p,e,t,fl,pl,el,tl = replay_genome("neat_test/config-feedforward.txt", path)
+            gain = p-e
+            gains = []
+            for i in range(len(pl)):
+                gains.append(pl[i]-el[i])
+            killed = el.count(0)
+            file_aux.write(str(sol)+"-"+str(run+1)+"= "+str(killed)+", "+str(gain)+", "+str(p)+", "+str(e)+", "+str(f)+", "+str(gains)+", "+str(pl)+", "+str(el)+", "+str(fl)+"\n")
+    file_aux.close()
     sys.exit(0)
 
 # Locating config file
